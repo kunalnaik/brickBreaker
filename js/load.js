@@ -1,5 +1,6 @@
 var loadState = {
   preload: function() {
+    // add loading text
     game.add.text(game.world.width*0.5, game.world.height*0.5, 'loading..', {font: '30px Courier', fill: '#ffffff'});
 
     // load assets

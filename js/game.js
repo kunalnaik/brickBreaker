@@ -1,5 +1,5 @@
 // create game variable
-var game = new Phaser.Game(480, 320, Phaser.AUTO, "gameDiv");
+var game = new Phaser.Game(480, 320, Phaser.WEBGL, "gameDiv");
 
 // add states
 game.state.add('boot', bootState);
