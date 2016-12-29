@@ -33,7 +33,8 @@ var playState = {
   update: function() {
     game.physics.arcade.collide(this.ball, this.paddle, this.paddleHit);
     game.physics.arcade.collide(this.ball, this.bricks, this.brickHit);
-    this.paddle.x = game.input.x || game.world.width*0.5;
+    // this.paddle.x = game.input.x || game.world.width*0.5;
+    this.paddle.x = xprediction || game.world.width*0.5;
   },
 
   initBricks: function() {
