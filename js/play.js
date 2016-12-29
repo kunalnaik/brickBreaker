@@ -27,7 +27,7 @@ var playState = {
     // initialize bricks
     this.initBricks();
     // add score count text
-    this.scoreText = game.add.text(5, 5, 'Points: 0', { font: '18px Arial', fill: '#0095DD' });
+    this.scoreText = game.add.text(15, 15, 'Points: '+this.score, { font: '18px Arial', fill: '#0095DD' });
   },
 
   update: function() {
@@ -45,8 +45,8 @@ var playState = {
         col: 3
       },
       offset: {
-        top: 50,
-        left: 60
+        top: 70,
+        left: 93
       },
       padding: 10
     }
