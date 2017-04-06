@@ -34,7 +34,14 @@ var playState = {
     game.physics.arcade.collide(this.ball, this.paddle, this.paddleHit);
     game.physics.arcade.collide(this.ball, this.bricks, this.brickHit);
     // this.paddle.x = game.input.x || game.world.width*0.5;
-    this.paddle.x = xprediction || game.world.width*0.5;
+    if(xprediction) {
+      if(xprediction >= 0 || xprediction <= game.world.width) {
+        if(Math.abs(xprediction-prev_predict) < 5)
+          this.paddle.x = xprediction;
+      }
+    }
+    else
+      this.paddle.x = game.world.width*0.5;
   },
 
   initBricks: function() {

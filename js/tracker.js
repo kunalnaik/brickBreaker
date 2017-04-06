@@ -1,4 +1,5 @@
 var xprediction = null;   // global var to store x prediction
+var prev_predict = null;   // global var to store previous prediction for smoothing
 window.onload = function() {
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
         .setTracker('clmtrackr')
@@ -6,6 +7,7 @@ window.onload = function() {
           //  console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
          //   console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
           if(data != null)
+            prev_predict = xprediction;
             xprediction = data['x'];
         })
         .begin()
